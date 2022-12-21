@@ -29,11 +29,12 @@
 --c3:#222831;
 --c4:#d65a31;
 --c5:#fff;
+--c6:#FF8F00;
 --m1: 8px;
 --rc: 8px;
 }
 
-/* General */
+/* general */
 html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -53,43 +54,37 @@ body {
     padding: 1em;
 }
 
+/* main title and menu */
+main ul {list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: var(--c3)}
+main li {float: left}
+main li a {display: block; color: var(--c6); text-align: center; padding: 10px 20px; text-decoration: none}
+main li a:hover {display: block; color: var(--c3); background-color: var(--c6); text-align: center; padding: 10px 20px; text-decoration: none}
+
 img, iframe {border: none; max-width: 100%}
-a {color: var(--c1);  text-decoration:none}
-a:hover {color: var(--c1); text-decoration: underline}
+a {color: var(--c6); text-decoration: none; text-decoration-color: var(--c6);}
+a:hover {color: var(--c6); text-decoration: underline; text-decoration-color: var(--c6);}
 pre {font: 1em/1.6 var(--mono); background: var(--c4); color: var(--c3); padding: 1em; overflow: hidden}
 code {font: 1em/1.6 var(--mono); background: var(--c4); color: var(--c3); padding: 0.1em}
 blockquote {border-left: 5px solid var(--c4); padding: 1em 1.5em; margin: 0}
 hr {border:0; border-bottom: 1px solid var(--c4)}
 
- /* Headlines */
-h1,h2,h3,h4,h5,h6 {
-    /*margin: 0.6em 0;*/
-    font-weight: normal;
-    font-family: var(--extralight);
-}
-h1 {
-    font-size: 2.625em;
-    line-height: 1.2;
-    margin: 2em 0em 1em 0em;
-}
-h2 {
-    font-size: 1.625em;
-    line-height: 1.2;
-    margin: 2em 0em 0em 0em;
-}
-h3 {font-size: 1.3125em; line-height: 1.24; margin: 0.6em 0}
+/* headers */
+h1,h2,h3,h4,h5,h6 {font-weight: normal; font-family: var(--extralight)}
+h1 {font-size: 2.625em; line-height: 1.2; margin: 2em 0em 1em 0em; text-align: center}
+h2 {color: var(--c6); font-size: 1.625em; line-height: 1.2; margin: 2em 0em 0em 0em}
+h3 {color: var(--c6); font-size: 1.3125em; line-height: 1.24; margin: 0.6em 0}
 h4 {font-size: 1.1875em; line-height: 1.23; margin: 0.6em 0}
-h5,h6 {font-size: 1em; font-weight:bold; margin: 0.6em 0}
+h5,h6 {font-size: 1em; margin: 0.6em 0}
 
-/* Table */
+/* table */
 table {border-collapse: collapse; border-spacing: 0; border: 1px solid var(--c4); margin:1em 0; width: 100%}
 th, td {text-align: left; vertical-align: top; padding: 0.4em}
 thead,tfoot {background: var(--c2)}
 
-/* Rounded Corners*/
+/* rounded Corners*/
 pre,code,input,select,textarea,button,img {border-radius: var(--rc)}
 
-/* Forms */
+/* forms */
 fieldset {border: 0}
 form {width: 100%; text-align: left}
 form label {font-weight: bold}
@@ -98,25 +93,16 @@ input, select, textarea {font-size: 1em; color:var(--c4); background: var(--c2);
 button, input[type=submit], input[type=reset], input[type="button"] { -webkit-appearance: none; font-size: 1em; display: inline-block; color: var(--c5); background: var(--c1);  border: 0; margin: 4px;  padding: 0.6em; cursor: pointer; text-align: center}
 button:hover, button:focus, input:hover, textarea:hover, select:hover {opacity: 0.8}
 
-/* Infinite Grid */
+/* grid */
 section {display: flex; flex-flow: row wrap}
 [style*="--c:"], section>section, aside, article {flex:var(--c,1); margin:var(--m1)}
 
-/* Cards */
+/* cards */
 article {background: var(--c4); border-radius: var(--rc); padding: 1em; color: var(--c3); text-align: center}
 [style*="--c:"]:first-child, section>section:first-child, article:first-child {margin-left:0}
 
-/* Introduction */
-.introduction {
-    font-family: var(--regular);
-    font-size: 1.6em;
-    text-align: center;
-}
+/* introduction */
+.introduction {font-family: var(--regular); font-size: 1.6em; text-align: center}
 
-/* Footer */
-.footer {
-    font-family: var(--extralight);
-    font-size: 0.8em;
-    text-align: center;
-    margin: 6em 0em 0em 0em;
-}
+/* footer */
+footer {font-family: var(--extralight); font-size: 0.9em; text-align: center; margin: 6em 0em 0em 0em}

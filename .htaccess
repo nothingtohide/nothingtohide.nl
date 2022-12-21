@@ -1,0 +1,16 @@
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+AddType image/x-icon .ico
+ExpiresActive On
+ExpiresByType image/gif "access plus 1 month"
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType image/x-icon "access plus 1 month"
+ExpiresDefault "access plus 2 days"
+</IfModule>
+## EXPIRES CACHING ##
+
+# remove .html from pages
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html
