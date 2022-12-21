@@ -1,2 +1,2 @@
-# nothingtohide.nl
-Nothing to hide website files
+# Nothing to hide website
+These are the files for the https://nothingtohide.nl website.
