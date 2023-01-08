@@ -23,8 +23,8 @@
     </main>
 
     <content>
-        <h2>Transparency Report December 2022</h2>
-        <p>Nothing to hide became a Tor exit relay operator this month, in addition to running only guard/middle relays before. This is a good time to start with monthly transparency reports and so here it is.</p>
+        <h2>Transparency Report January 2023</h2>
+        <p>This month's efforts resulted in achieving some nice milestones. We became the biggest Tor relay provider in terms of both bandwidth and exit probability and broke the threshold of 10% BSD share, making GNU/Linux less of an monoculture. In addition the first steps towards a capable DNS infrastructure to manage the growing amount of DNS queries have been taken.</p>
         <p>The metrics used in this report are rounded extrapolated snapshots of the final day of the month, to not give away too much specific information.</p>
 
         <h3>1 Requests & orders</h3>
@@ -70,7 +70,7 @@
 
         <h3>2 Service report</h3>
         <h4>2.1 Tor relays</h4>
-        <!-- tor dns statistics -->
+        <!-- tor relay statistics -->
         <section>
             <article>
                 <h6><b>Tor relays</b></h6>
@@ -78,15 +78,15 @@
             </article>
             <article>
                 <h6><b>Bandwidth</b></h6>
-                <p><b>16 Gb/s</b></p>
+                <p><b>18 Gb/s</b></p>
             </article>
             <article>
                 <h6><b>Monthly traffic</b></h6>
-                <p><b>5150 TB</b></p>
+                <p><b>5.750 TB</b></p>
             </article>
         </section>
-        <p>This month we added more physical servers to our infrastructure to accomodate for a whole bunch of new Tor exit relays. We expect bandwidth contribution to go up considerably in the near future, but for now the new Tor relays are still ramping-up.</p>
-        <!-- tor dns statistics table -->
+        <p>We added some more relays to the Tor servers, to speed up the ramp-up of effective bandwidth usage. The servers running Tor relays are close to maxing out their CPU's and we don't expect bandwidth to grow much after this month.</p>
+        <!-- tor relay statistics table -->
         <table>
             <tr>
                 <th>Period</th>
@@ -116,9 +116,9 @@
                 <td>January 2023</td>
                 <td>68</td>
                 <td>18</td>
-                <td>16 Gb/s</td>
-                <td>171 TB</td>
-                <td>5.150 TB</td>
+                <td>18 Gb/s</td>
+                <td>193 TB</td>
+                <td>7.570 TB</td>
             </tr>
         </table>
         <p>Note that for these statistics both incoming and outgoing traffic are combined (just like Tor network's metrics).</p>
@@ -128,19 +128,19 @@
         <section>
             <article>
                 <h6><b>Query response</b></h6>
-                <p><b>1500 per second</b></p>
+                <p><b>1900 per second</b></p>
             </article>
             <article>
                 <h6><b>Daily queries</b></h6>
-                <p><b>130 million</b></p>
+                <p><b>164 million</b></p>
             </article>
             <article>
                 <h6><b>Monthly queries</b></h6>
-                <p><b>3.9 billion</b></p>
+                <p><b>4.9 billion</b></p>
             </article>
         </section>
         <p>DNS requests on the Tor network are resolved by the Tor exit relays. This means that high capacity Tor exit relays can generate a *lot* of DNS queries. These queries are being resolved by multiple high capacity DNS resolvers.</p>
-        <p>This is the first month for our Tor exit relays so the qps rate and total amount of DNS queries are still pretty modest. We expect these numbers to rise considerable when the Tor exit relays have ramped-up. This means we need to work on a adequate DNS infrastructure in Q1 2023.</p>
+        <p>The queries-per-second rate more than doubled this month, which added a considerable additional load on our DNS resolvers. We added one more DNS resolver to cope with the increase in queries and account for failover scenarios, where one or two DNS resolvers can become inaccessible at any time without disrupting our Tor service. In addition we added DNS-over-TLS to our externally hosted DNS resolvers, to make it significantly harder for adversaries to intercept and/or manipulate DNS query content.</p>
         <!-- tor dns statistics table -->
         <table>
             <tr>
@@ -162,10 +162,10 @@
                 <td>2.300.000.000</td>
             </tr>
             <tr>
-                <td>December 2022</td>
-                <td>1.500</td>
-                <td>129.000.000</td>
-                <td>3.900.000.000</td>
+                <td>January 2023</td>
+                <td>1.900</td>
+                <td>164.000.000</td>
+                <td>4.900.000.000</td>
             </tr>
         </table>
         <p>Do note that we don't log the contents of DNS queries.</p>
@@ -207,17 +207,17 @@
                 <td>0.12%</td>
                 <td>6.4%</td>
                 <td>93.6%</td>
-                <td>6.1%</td>
-                <td>7.2%</td>
-                <td>92.8%</td>
+                <td>8.2%</td>
+                <td>9.7%</td>
+                <td>90.3%</td>
             </tr>
         </table>
-        <p>In december the BSD Consensus Weight share of exit relay traffic sextupled. This sadly isn't as impressive as it sounds though, considering the bleak starting point. It's a nice start though and we will continue our efforts in 2023.</p>
-        <p>High capacity guard relays on the other hand are more difficult to run than ever before. The ongoing DDoS attacks make it difficult to get and maintain guard status, so this month we sadly didn't contribute to a increase in BSD Consensus Weight share of guard relays. In 2023 we will try to implement effective DDoS countermeasures.</p>
+        <p>In January the BSD Consensus Weight share of exit relay traffic hit the milestone of 10%. While this share is still in stark contrast with GNU/Linux's 90%, you could say the Tor network is no longer a GNU/Linux monoculture. Sadly with the current size of the Tor network Nothing to hide can't contribute much more in terms of BSD share, since that would result in centralisation issues.</p>
+        <p>High capacity guard relays on the other hand are more difficult to run than ever before. The ongoing DDoS attacks make it difficult to get and maintain guard status, so this month we sadly didn't contribute to a increase in BSD Consensus Weight share of guard relays. We have to look in to effective DDoS countermeasures.</p>
 
         <h4>2.4 DDoS attacks</h4>
-        <p>This month five big DDoS attacks with a combined duration of ~11 days were endured on our guard/middle relays. The newly installed server was able to withstand the attacks significantly better than the previously used hardware. This resulted in 'only' a reduction to our bandwidth contribution to the Tor network of almost 3 Gb/s, instead of the frequent crashes and kernel panics we had to deal with before.</p>
-        <p>The goal still seems to prevent the middle relays from becoming guard relays, which proves to be successful for now. In 2023 we will look in to countermeasures to thwart the adversaries' efforts more effectively.</p>
+        <p>This month there was pretty much one big permanent DDoS attack (with the occasional break of a few hours) endured on our guard/middle relays. This resulted in a significant reduction to our bandwidth contribution to the Tor network and made sure the middle relays couldn't become guard relays this month as well.</p>
+        <p>The adversaries' primary goal still seems to prevent the middle relays from becoming guard relays, which proves to be successful for now. In February and March we will look in to countermeasures to thwart the adversaries' efforts more effectively.</p>
     </content>
 
     <footer>
