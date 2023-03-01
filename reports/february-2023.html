@@ -1,0 +1,256 @@
+<html lang="en-US" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nothing to hide - Privacy infrastructure provider</title>
+    <link rel="icon" href="/images/icon.gif" type="image/x-icon" sizes="128x128">
+    <link href="/css/style.css" media="screen" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <h1>N0TH1NG T0 H1D3</h1>
+        <hr>
+        <ul>
+            <li><a href="https://nothingtohide.nl">4B0UT</a></li>
+            <li><a href="https://nothingtohide.nl/reports">R3P0RTS</a></li>
+            <li><a href="https://nothingtohide.nl/tor">T0R</a></li>
+            <li><a href="https://nothingtohide.nl/abuse">4BUS3</a></li>
+            <li><a href="https://nothingtohide.nl/privacy">PR1V4CY</a></li>
+            <li><a href="https://nothingtohide.nl/contact">C0NT4CT</a></li>
+        </ul>
+        <hr>
+    </main>
+
+    <content>
+        <h2>Transparency Report January 2023</h2>
+        <p>In February we converted most of the guard and middle relays to exit relays because of the severity of the attacks to guard relays. Exit relays are attacked pretty much constantly as well, but those attacks are less severe and somewhat easier to manage. We might host guard relays in the future again, when the Tor project finds more effective measures to mitigate the attacks.</p>
+        <p>As a result, the exit probability share of Nothing to hide exit relays grew by ~5% to ~15% in total.</p>
+        <p>The metrics used in this report are rounded extrapolated snapshots of the final day of the month, to not give away too much specific information.</p>
+
+        <h3>1 Requests & orders</h3>
+        We received 3 official LEA requests this month but couldn't comply with any of these requests because of the nonexistence of the requested data.
+
+        <h4>1.1 Law enforcement agencies (LEA)</h4>
+        <table>
+            <tr>
+                <th>LEA</th>
+                <th>Requests</th>
+                <th>Orders</th>
+            </tr>
+            <tr>
+                <td>Police via Ministry of Internal Affairs (Bosnia and Herzegovina)</td>
+                <td>1</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Cyber Crime Police Station (Republic of India)</td>
+                <td>2</td>
+                <td>0</td>
+            </tr>
+        </table>
+
+        <h4>1.2 Legal entities</h4>
+        <table>
+            <tr>
+                <th>Legal entity</th>
+                <th>Requests</th>
+            </tr>
+            <tr>
+                <td>n/a</td>
+                <td>0</td>
+            </tr>
+        </table>
+
+        <h4>1.3 Natural persons</h4>
+        <table>
+            <tr>
+                <th>Natural person</th>
+                <th>Requests</th>
+            </tr>
+            <tr>
+                <td>John Doe</td>
+                <td>0</td>
+            </tr>
+        </table>
+
+        <h3>2 Service report</h3>
+        <h4>2.1 Tor relays</h4>
+        <!-- tor relay statistics -->
+        <section>
+            <article>
+                <h6><b>Tor relays</b></h6>
+                <p><b>127</b></p>
+            </article>
+            <article>
+                <h6><b>Bandwidth</b></h6>
+                <p><b>22.5 Gb/s</b></p>
+            </article>
+            <article>
+                <h6><b>Monthly traffic</b></h6>
+                <p><b>7.200 TB</b></p>
+            </article>
+        </section>
+        <p>Because of the increase in maximum amount of Tor relays per IPv4 address we were finally able to somewhat saturate the CPU's on the exit relay servers in February. This also means that Nothing to hide's contribution to the Tor network won't grow much from now on, unless we invest in new servers.</p>
+        <!-- tor relay statistics table -->
+        <table>
+            <tr>
+                <th>Period</th>
+                <th># Guard</th>
+                <th># Exit</th>
+                <th>Bandwidth</th>
+                <th>Daily traffic</th>
+                <th>Monthly traffic</th>
+            </tr>
+            <tr>
+                <td>November 2022</td>
+                <td>18</td>
+                <td>0</td>
+                <td>5.6 Gb/s</td>
+                <td>60 TB</td>
+                <td>1.800 TB</td>
+            </tr>
+            <tr>
+                <td>December 2022</td>
+                <td>34</td>
+                <td>18</td>
+                <td>12.8 Gb/s</td>
+                <td>138 TB</td>
+                <td>4.150 TB</td>
+            </tr>
+            <tr>
+                <td>January 2023</td>
+                <td>68</td>
+                <td>18</td>
+                <td>18.5 Gb/s</td>
+                <td>200 TB</td>
+                <td>6.000 TB</td>
+            </tr>
+            <tr>
+                <td>February 2023</td>
+                <td>3</td>
+                <td>124</td>
+                <td>22.5 Gb/s</td>
+                <td>240 TB</td>
+                <td>7.200 TB</td>
+            </tr>
+        </table>
+        <p>Note that for these statistics both incoming and outgoing traffic are combined (just like Tor network's metrics).</p>
+
+        <h4>2.2 Tor DNS requests</h4>
+        <!-- tor dns statistics overview -->
+        <section>
+            <article>
+                <h6><b>Query response</b></h6>
+                <p><b>3150 per second</b></p>
+            </article>
+            <article>
+                <h6><b>Daily queries</b></h6>
+                <p><b>272 million</b></p>
+            </article>
+            <article>
+                <h6><b>Monthly queries</b></h6>
+                <p><b>8.2 billion</b></p>
+            </article>
+        </section>
+        <p>DNS requests on the Tor network are resolved by the Tor exit relays. This means that high capacity Tor exit relays can generate a *lot* of DNS queries. These queries are being resolved by multiple high capacity DNS resolvers.</p>
+        <p>As expected, the queries-per-second rate increased considerably because of the addition of more exit relays. Our DNS-over-TLS servers are still able to handle this load very well.</p>
+        <!-- tor dns statistics table -->
+        <table>
+            <tr>
+                <th>Period</th>
+                <th>Query rate</th>
+                <th>Daily queries</th>
+                <th>Monthly queries</th>
+            </tr>
+            <tr>
+                <td>November 2022</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>December 2022</td>
+                <td>870</td>
+                <td>75.000.000</td>
+                <td>2.300.000.000</td>
+            </tr>
+            <tr>
+                <td>January 2023</td>
+                <td>2.100</td>
+                <td>181.000.000</td>
+                <td>5.400.000.000</td>
+            </tr>
+            <tr>
+                <td>February 2023</td>
+                <td>3.150</td>
+                <td>272.000.000</td>
+                <td>8.200.000.000</td>
+            </tr>
+        </table>
+        <p>Do note that we don't log the contents of DNS queries.</p>
+
+        <h4>2.3 Tor diversity</h4>
+        <p>One of our major goals is to break the GNU/Linux monoculture currently present on the Tor network. Monocultures in nature are dangerous, as vulnerabilities are held in common across a broad spectrum. In a globally used anonymity network, monocultures can be disastrous.</p>
+        <p>We make the Tor network stronger by running all our relays on FreeBSD. Here we report on our ongoing effort to increase operating system diversity on the Tor network.</p>
+        <!-- tor diversity statistics -->
+        <table>
+            <tr>
+                <th>Period</th>
+                <th>NTH Guard</th>
+                <th>BSD Guard</th>
+                <th>GNU Guard</th>
+                <th>NTH Exit</th>
+                <th>BSD Exit</th>
+                <th>GNU Exit</th>
+            </tr>
+            <tr>
+                <td>November 2022</td>
+                <td>0.11%</td>
+                <td>6.1%</td>
+                <td>93.9%</td>
+                <td>0.0%</td>
+                <td>0.9%</td>
+                <td>99.1%</td>
+            </tr>
+            <tr>
+                <td>December 2022</td>
+                <td>0.12%</td>
+                <td>6.2%</td>
+                <td>93.8%</td>
+                <td>4.46%</td>
+                <td>6.0%</td>
+                <td>94.0%</td>
+            </tr>
+            <tr>
+                <td>January 2023</td>
+                <td>1.54%</td>
+                <td>7.5%</td>
+                <td>92.5%</td>
+                <td>11.4%</td>
+                <td>16%</td>
+                <td>84%</td>
+            </tr>
+            <tr>
+                <td>February 2023</td>
+                <td>0.13%</td>
+                <td>6%</td>
+                <td>94%</td>
+                <td>15%</td>
+                <td>19%</td>
+                <td>81%</td>
+            </tr>
+        </table>
+        <p>In February the NTH consensus weight of exit traffic hit the milestone of 15%, which bumped the BSD consensus weight of exit traffic to almost 20%. These are some nice results, which could of course be improved even further to improve Tor's network diversity, but for now (and with the ongoing attacks) the hardware we use is at its limit.</p>
+        <p>The increase in exit relay traffic sadly came at the expense of guard relay traffic. There is not much we can do about that for now, but we have ambitions to increase this in the future when the Tor project is able to mitigate the attacks more effectively.</p>
+
+        <h4>2.4 DDoS attacks</h4>
+        <p>February was another month where our infrastructure was targeted by numerous DDoS attacks in different shapes and sizes. This resulted in a significant reduction to our bandwidth contribution to the Tor network.</p>
+        <p>We experimented a lot with different kernel/software based firewalls such as PF and IPFW, but sadly the adverse performance impact of stateful firewalling is incredibly huge. In the coming months we have to look in to a different approach to thwart the adversaries' efforts more effectively.</p>
+    </content>
+
+    <footer>
+        <p>Copyright &#169; 2019-2023 Nothing to hide</p>
+    </footer>
+</body>
+</html>
