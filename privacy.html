@@ -95,7 +95,8 @@
             </tr>
         </table>
         <h3>Tor relays</h3>
-        <p>When you use one of our Tor relays, your traffic will be routed through our infrastructure. This includes both the (heavily encrypted) contents and the traffic metadata such as the client source (in the case of guard relays) and destination (in the case of exit relays) IP addresses. Do note that Nothing to hide can't view the contents of the traffic since it's heavily encrypted by the Tor network. We don't log anything regarding the Tor relays or Tor traffic so although we process such information on a realtime basis, we can't recall this information.</p>
+        <p>When you use one of our Tor relays, your traffic will be routed through our infrastructure. This includes both the (heavily encrypted) contents and the traffic metadata such as the client source (in the case of guard relays) and destination (in the case of exit relays) IP addresses.</p>
+        <p>Do note that Nothing to hide can't view the contents of the traffic since it's heavily encrypted by the Tor network. We don't log anything regarding the Tor relays or Tor traffic so although we process such information on a realtime basis, we can't recall this information.</p>
         <table>
             <tr>
                 <th>PII</th>
@@ -118,7 +119,8 @@
         </table>
     </content>
     <h3>DNS servers</h3>
-        <p>When you use our DNS servers, your DNS queries will be encrypted (because of DNS-over-TLS) before they are send to us for further processing. This makes sure parties with a network presence in between your client (requesting a specific DNS record) and the DNS server (answering) can't eavesdrop on the DNS query/answer content. Do note that when you use on of our Tor exit relays, that you're automatically using our DNS servers as well since your DNS queries are resolved by our own DNS servers. In this case your client's source IP address isn't processed by our DNS servers since the Tor exit relay will send the DNS request to our DNS server from its own IP address.</p>
+        <p>When you use our DNS servers, your DNS queries will be encrypted (because of DNS-over-TLS) before they are send to us for further processing. This makes sure parties with a network presence in between your client (requesting a specific DNS record) and the DNS server (answering) can't eavesdrop on the DNS query/answer content.</p>
+        <p>Do note that when you use on of our Tor exit relays, you're automatically using our DNS servers as well because your DNS queries are resolved by our own DNS servers. In this case your client's source IP address isn't processed by our DNS servers since the Tor exit relay will send the DNS request to our DNS server from its own IP address.</p>
         <table>
             <tr>
                 <th>PII</th>
