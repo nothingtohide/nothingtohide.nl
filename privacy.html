@@ -33,7 +33,7 @@
                 <li>We won't share PII with third-parties unless it's one of our data processors (like Tuta GmbH for handling our email) or unless we are compelled to do so by a competent authority.</li>
             </ul>
         <h3>Websites</h3>
-        <p>When you visit our website <a href="https://nothingtohide.nl">nothingtohide.nl</a>, your IP address and browser user agent are being processed by our webserver in order to serve the website's content to your browser. In addition we log these personal data for 30 days for the purpose of preventing and finding abuse and keeping nothingtohide.nl available.</p>
+        <p>When you visit our website <a href="https://nothingtohide.nl">nothingtohide.nl</a>, your IP address and browser user agent are being processed by our webserver in order to serve the website's content to your browser. In addition we log these personal data for 30 days for the purpose of finding and preventing abuse and keeping nothingtohide.nl available.</p>
         <table>
             <tr>
                 <th>PII</th>
@@ -44,18 +44,18 @@
             <tr>
                 <td>IP address</td>
                 <td>NTH</td>
-                <td>Find and prevent abuse, keep nothingtohide.nl available</td>
+                <td>Find and prevent abuse/availability</td>
                 <td>Legitimate interest</td>
             </tr>
             <tr>
                 <td>Browser user agent</td>
                 <td>NTH</td>
-                <td>Find and prevent abuse, keep nothingtohide.nl available</td>
+                <td>Find and prevent abuse/availability</td>
                 <td>Legitimate interest</td>
             </tr>
         </table>
         <h3>Email</h3>
-        <p>You can <a href="https://nothingtohide.nl/contact">send us an email</a> for whatever reason. In order to receive, read and reply to these email we process the emailserver's IP address, contents of the emails and email address(es)/account name(s) of email recipients and senders.</p>
+        <p>You can <a href="https://nothingtohide.nl/contact">send us an email</a>. In order to receive, read and reply to these email we process the mailserver's IP address, contents of the mail and email address(es)/account name(s) of email recipients and senders.</p>
         <p>Nothing to hide uses the Germany based secure email service <a href="https://tutanota.com/">Tutanota</a> by Tutao GmbH (Tutao) to handle its email. Do note that upon request we can provide a secure email link for sharing sensitive information or data.</p>
         <table>
             <tr>
@@ -66,36 +66,36 @@
                 <th>Legal basis</th>
             </tr>
             <tr>
-                <td>Emailserver IP address</td>
+                <td>Mailserver IP address</td>
                 <td>NTH</td>
                 <td>Tutao</td>
-                <td>Make sending/receiving email possible</td>
+                <td>Sending/receiving email</td>
                 <td>Legitimate interest</td>
             </tr>
             <tr>
                 <td>Email address</td>
                 <td>NTH</td>
                 <td>Tutao</td>
-                <td>Make sending/receiving email possible</td>
+                <td>Sending/receiving email</td>
                 <td>Legitimate interest</td>
             </tr>
             <tr>
                 <td>Name(s)</td>
                 <td>NTH</td>
                 <td>Tutao</td>
-                <td>Make sending/receiving email possible</td>
+                <td>Sending/receiving email</td>
                 <td>Legitimate interest</td>
             </tr>
             <tr>
-                <td>Email content</td>
+                <td>Email contents</td>
                 <td>NTH</td>
                 <td>Tutao</td>
-                <td>Make sending/receiving email possible</td>
+                <td>Sending/receiving email</td>
                 <td>Legitimate interest</td>
             </tr>
         </table>
         <h3>Tor relays</h3>
-        <p>When you use one of our Tor relays, your traffic will be routed through our infrastructure. This includes both the (heavily encrypted) contents and the traffic metadata such as the IP address. Do note that Nothing to hide can't view the contents of the traffic since it's heavily encrypted by the Tor network. In addition we don't log anything regarding the Tor relays or Tor traffic so although we process such information on a realtime basis, we can't view it.</p>
+        <p>When you use one of our Tor relays, your traffic will be routed through our infrastructure. This includes both the (heavily encrypted) contents and the traffic metadata such as the client source (in the case of guard relays) and destination (in the case of exit relays) IP addresses. Do note that Nothing to hide can't view the contents of the traffic since it's heavily encrypted by the Tor network. We don't log anything regarding the Tor relays or Tor traffic so although we process such information on a realtime basis, we can't recall this information.</p>
         <table>
             <tr>
                 <th>PII</th>
@@ -110,9 +110,32 @@
                 <td>Legitimate interest</td>
             </tr>
             <tr>
-                <td>Tor encrypted content</td>
+                <td>Tor encrypted contents</td>
                 <td>NTH</td>
                 <td>Required for Tor relays</td>
+                <td>Legitimate interest</td>
+            </tr>
+        </table>
+    </content>
+    <h3>DNS servers</h3>
+        <p>When you use our DNS servers, your DNS queries will be encrypted (because of DNS-over-TLS) before they are send to us for further processing. This makes sure parties with a network presence in between your client (requesting a specific DNS record) and the DNS server (answering) can't eavesdrop on the DNS query/answer content. Do note that when you use on of our Tor exit relays, that you're automatically using our DNS servers as well since your DNS queries are resolved by our own DNS servers. In this case your client's source IP address isn't processed by our DNS servers since the Tor exit relay will send the DNS request to our DNS server from its own IP address.</p>
+        <table>
+            <tr>
+                <th>PII</th>
+                <th>Controller</th>
+                <th>Purpose</th>
+                <th>Legal basis</th>
+            </tr>
+            <tr>
+                <td>Client IP address</td>
+                <td>NTH</td>
+                <td>Required for DNS</td>
+                <td>Legitimate interest</td>
+            </tr>
+            <tr>
+                <td>DNS query contents</td>
+                <td>NTH</td>
+                <td>Required for DNS</td>
                 <td>Legitimate interest</td>
             </tr>
         </table>
